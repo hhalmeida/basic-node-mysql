@@ -1,8 +1,8 @@
 # Basic-node-mysql
 
 ## Begin
-
 - simple example node app with connection mysql.
+
 - no frameworks
 
 - use lib mysql2 (npm i mysql2) 
@@ -11,7 +11,10 @@
 
 - Print json result in console
 
+- mysql instance running in docker (docker-compose.yml), I used mysql 5
+
 ## Script SQL
+
 ```sql
 create database demoNode;
 
@@ -24,9 +27,12 @@ create table demoNode.clients(
 );
 ```
 
-## What Run
-- run thi project
+## how to Run
+### how to run this project
+- I'am used node 14.x (I use nvm)
+- run npm install (for to install packages)
 
 ```bash
-node index.js
+$ npm install
+$ node index.js
 ```
