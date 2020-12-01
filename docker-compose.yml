@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: hlab
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./asd/db/latest.sql.gz:/docker-entrypoint-initdb.d/00-dump.sql.gz:ro
+    ports:
+      - 3308:3306
+
+  router:
+    image: traefik:v2.2
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./asd/config/traefik:/etc/traefik:ro
+    ports:
+      - 80:80
+      - 443:443
+      - 8080:8080
